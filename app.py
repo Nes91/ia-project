@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
-from streamlit-option-menu import option_menu
+from streamlit_option_menu import option_menu
 
 with st.sidebar:
     selected = option_menu(
