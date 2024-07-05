@@ -14,17 +14,17 @@ with st.sidebar:
         options=["Explication du code", "Projet"],
         default_index=0,
     )
-if selected == "Explication du code":
-    st.title(f"Bienvenue dans l'{selected}")
-    st.write("Code pour le chargement des classes ImageNet depuis le fichier texte")
-    st.code('''
-        CLASSES_FILE = "imagenet_classes.json"
-        with open(CLASSES_FILE, 'r') as f:
-            imagenet_classes = [line.strip() for line in f.readlines()]
-
-        model = models.resnet50(pretrained=True)
-        model.eval()
-        ''', language='python')
+    if selected == "Explication du code":
+        st.title(f"Bienvenue dans l'{selected}")
+        st.write("Code pour le chargement des classes ImageNet depuis le fichier texte")
+        st.code('''
+            CLASSES_FILE = "imagenet_classes.json"
+            with open(CLASSES_FILE, 'r') as f:
+                imagenet_classes = [line.strip() for line in f.readlines()]
+    
+            model = models.resnet50(pretrained=True)
+            model.eval()
+            ''', language='python')
     with (st.expander('Explication du code')):
         st.write("CLASSES_FILE = imagenet_classes.json : Nous devons créer un fichier imagenet_classes.json pour le pré-entrainement de l'image et le mettre à la racine du projet.")
         ("with open(CLASSES_FILE, 'r') as f:imagenet_classes = [line.strip() for line in f.readlines()] : Cette ligne ouvre le fichier imagenet_classes.txt en mode lecture ('r').")
